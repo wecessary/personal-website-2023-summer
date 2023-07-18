@@ -1,9 +1,10 @@
 ---
 import Logo from "../icons/Logo.astro";
 import Buttons from "./Buttons.astro";
+import HamburgerMenu from "./HamburgerMenu.astro";
 ---
 
-<header class="mt-4 mx-10 lg:mx-20">
+<header class="mt-4 mx-10 lg:mx-20 relative">
   <nav class="flex justify-between">
     <div class="flex items-center gap-8">
       <a>
@@ -15,6 +16,13 @@ import Buttons from "./Buttons.astro";
       <a class="hidden lg:block text-sm">About me</a>
       <a class="hidden lg:block text-sm">FAQ</a>
     </div>
-    <Buttons buttonType="smallPrimary" text="Contact me" href="/" />
+    <Buttons
+      isHiddenForMobile
+      buttonType="smallPrimary"
+      text="Contact me"
+      href="/"
+    />
+    <HamburgerMenu />
   </nav>
+  <div class="mobile-nav-menu text-5xl hidden">HI</div>
 </header>

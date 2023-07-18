@@ -5,8 +5,9 @@ interface Props {
   buttonType: "primary" | "secondary" | "smallPrimary";
   text: string;
   href: string;
+  isHiddenForMobile?: boolean;
 }
-const { buttonType, text, href } = Astro.props;
+const { buttonType, text, href, isHiddenForMobile } = Astro.props;
 
 function getButtonStyles() {
   const baseStyle =
@@ -16,7 +17,7 @@ function getButtonStyles() {
     case "primary":
       return `${baseStyle} px-4 py-3  md:px-8 md:lg:py-4 bg-gray-900 text-white hover:bg-gray-700`;
     case "smallPrimary":
-      return `${baseStyle} px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm bg-gray-900 text-white hover:bg-gray-700 `;
+      return `${baseStyle} px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm bg-gray-900 text-white hover:bg-gray-700`;
     case "secondary":
       return `${baseStyle} px-4 py-3 md:px-8 md:py-4 bg-transparent hover:bg-gray-100`;
   }
@@ -35,7 +36,10 @@ function getArrowStyles() {
 }
 ---
 
-<a href={href} class={getButtonStyles()}>
+<a
+  href={href}
+  class={`${getButtonStyles()} ${isHiddenForMobile && "hidden lg:flex"}`}
+>
   <span>{text}</span>
   <span>
     <Arrow styles={getArrowStyles()} />
