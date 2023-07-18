@@ -22,7 +22,7 @@
     #5083ff 48.44%,
     #ff660b 100%
   );
-  animation: shine 8s ease infinite;
+  animation: shine 8s linear infinite;
 }
 @keyframes shine {
   0% {
