@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import HeroText from "../components/HeroText.astro";
 import PageLayout from "../layout/PageLayout.astro";
 ---
 
@@ -7,13 +7,7 @@ import PageLayout from "../layout/PageLayout.astro";
   title="Wesley Jessie - Freelance web design and development"
   description="Get custom made websites that stand out from templates. Life time gurantee."
 >
-  <div class="flex justify-center mt-24">
-    <h1
-      class="rainbow text-7xl w-3/4 py-2 text-center font-bold text-transparent bg-[length:300%_300%] bg-clip-text"
-    >
-      Websites built with custom design and code
-    </h1>
-  </div>
+  <HeroText />
 
   <div class="flex flex-col gap-6 items-center">
     <p class="w-1/2 text-gray-500 text-center">
