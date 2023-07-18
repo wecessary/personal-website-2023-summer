@@ -1,0 +1,20 @@
+---
+import Logo from "../icons/Logo.astro";
+import Buttons from "./Buttons.astro";
+---
+
+<header class="mt-4 mx-10 lg:mx-20">
+  <nav class="flex justify-between">
+    <div class="flex items-center gap-8">
+      <a>
+        <Logo styles=" w-10 h-auto lg:w-16" />
+      </a>
+      <a class="hidden lg:block text-sm">Pricing</a>
+      <a class="hidden lg:block text-sm">Serivces</a>
+      <a class="hidden lg:block text-sm">My work</a>
+      <a class="hidden lg:block text-sm">About me</a>
+      <a class="hidden lg:block text-sm">FAQ</a>
+    </div>
+    <Buttons buttonType="smallPrimary" text="Contact me" href="/" />
+  </nav>
+</header>

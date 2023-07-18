@@ -1,0 +1,43 @@
+---
+import Arrow from "../icons/Arrow.astro";
+
+interface Props {
+  buttonType: "primary" | "secondary" | "smallPrimary";
+  text: string;
+  href: string;
+}
+const { buttonType, text, href } = Astro.props;
+
+function getButtonStyles() {
+  const baseStyle =
+    "group transition-colors rounded-full flex gap-1 items-center";
+
+  switch (buttonType) {
+    case "primary":
+      return `${baseStyle} px-4 py-3  md:px-8 md:lg:py-4 bg-gray-900 text-white hover:bg-gray-700`;
+    case "smallPrimary":
+      return `${baseStyle} px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm bg-gray-900 text-white hover:bg-gray-700 `;
+    case "secondary":
+      return `${baseStyle} px-4 py-3 md:px-8 md:py-4 bg-transparent hover:bg-gray-100`;
+  }
+}
+
+function getArrowStyles() {
+  const baseStyle = "w-6 h-6 group-hover:translate-x-3 transition-transform";
+  switch (buttonType) {
+    case "primary":
+      return `stroke-white fill-white ${baseStyle}`;
+    case "smallPrimary":
+      return `stroke-white fill-white ${baseStyle}`;
+    case "secondary":
+      return `stroke-black fill-black ${baseStyle}`;
+  }
+}
+---
+
+<a href={href} class={getButtonStyles()}>
+  <span>{text}</span>
+  <span>
+    <Arrow styles={getArrowStyles()} />
+  </span>
+</a>

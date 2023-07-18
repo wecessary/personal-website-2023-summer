@@ -1,6 +1,6 @@
 ---
-import Arrow from "./Arrow.astro";
 import HeroText from "./HeroText.astro";
+import Buttons from "../components/ui/Buttons.astro";
 ---
 
 <div class="flex flex-col gap-6 items-center mt-24">
@@ -17,28 +17,8 @@ import HeroText from "./HeroText.astro";
     </span>
   </h2>
   <div class="flex gap-4">
-    <a
-      href="/"
-      class="group bg-gray-900 text-white hover:bg-gray-700 transition-colors px-8 py-4 rounded-full flex gap-1 items-end"
-    >
-      <span>Contact me</span>
-      <span>
-        <Arrow
-          styles="stroke-white fill-white w-6 h-6 group-hover:translate-x-3 transition-transform"
-        />
-      </span>
-    </a>
-    <a
-      href="/"
-      class="bg-transparent hover:bg-gray-100 transition-colors px-8 py-4 rounded-full flex gap-1 group"
-    >
-      <span>Pricing</span>
-      <span
-        ><Arrow
-          styles="stroke-black fill-black w-6 h-6 group-hover:translate-x-3 transition-transform"
-        /></span
-      >
-    </a>
+    <Buttons buttonType="primary" text="Contact me" href="/" />
+    <Buttons buttonType="secondary" text="Pricing" href="/" />
   </div>
   <div class="flex gap-4 items-center">
     <span class="relative flex h-3 w-3">
