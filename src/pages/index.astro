@@ -1,36 +1,7 @@
 ---
 import "../styles/global.css";
+import HeroText from "../components/HeroText.astro";
 ---
-
-<style>
-  :root {
-    --rainbow-1: 0%;
-    --rainbow-2: 21.35%;
-    --rainbow-3: 48.44%;
-    --rainbow-4: 100%;
-  }
-  .rainbow {
-    background: linear-gradient(
-      90deg,
-      #fc1e1e var(--rainbow-1),
-      #ff9245 var(--rainbow-2),
-      #5083ff var(--rainbow-3),
-      #ff660b var(--rainbow-4)
-    );
-    animation: shine 5s ease infinite;
-  }
-  @keyframes shine {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-</style>
 
 <html lang="en">
   <head>
@@ -41,12 +12,8 @@ import "../styles/global.css";
     <title>Astro</title>
   </head>
   <body>
-    <div class="flex flex-col gap-6 items-center mt-12">
-      <h1
-        class="text-7xl rainbow w-3/4 py-2 text-center font-bold text-transparent bg-clip-text bg-[length:500%] rainbow"
-      >
-        Websites built with custom design and code
-      </h1>
+    <HeroText />
+    <div class="flex flex-col gap-6 items-center">
       <p class="w-1/2 text-gray-500 text-center">
         Freelance developer that builds you an unique online presence
       </p>
