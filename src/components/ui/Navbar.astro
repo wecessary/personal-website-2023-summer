@@ -1,13 +1,15 @@
 ---
 import Logo from "../icons/Logo.astro";
-import Buttons from "./Buttons.astro";
+import ArrowColourButton from "./buttons/ArrowColourButton.astro";
+import Buttons from "./buttons/Buttons.astro";
+import HamburgerMenu from "./HamburgerMenu.astro";
 ---
 
-<header class="mt-4 mx-10 lg:mx-20">
-  <nav class="flex justify-between">
+<header class="mt-4 mx-5 lg:mx-20 z-50 relative">
+  <nav class="flex justify-between items-center">
     <div class="flex items-center gap-8">
       <a>
-        <Logo styles=" w-10 h-auto lg:w-16" />
+        <Logo styles="w-12 h-auto lg:w-16" />
       </a>
       <a class="hidden lg:block text-sm">Pricing</a>
       <a class="hidden lg:block text-sm">Serivces</a>
@@ -15,6 +17,62 @@ import Buttons from "./Buttons.astro";
       <a class="hidden lg:block text-sm">About me</a>
       <a class="hidden lg:block text-sm">FAQ</a>
     </div>
-    <Buttons buttonType="smallPrimary" text="Contact me" href="/" />
+    <Buttons
+      isHiddenForMobile
+      buttonType="smallPrimary"
+      text="Contact me"
+      href="/"
+    />
+    <HamburgerMenu />
+  </nav>
+  <nav
+    aria-label="mobile nav menu"
+    class="z-50 h-screen overflow-y-auto bg-white mt-5 mobile-nav-menu absolute hidden w-full"
+  >
+    <ul class="flex flex-col items-center">
+      <li class="mt-20">
+        <ArrowColourButton
+          text="Pricing"
+          borderColour="border-[#FA8787]"
+          arrowColour="stroke-[#FA8787]"
+          href="/"
+        />
+      </li>
+      <li class="mt-6">
+        <ArrowColourButton
+          text="Services"
+          borderColour="border-[#FF9245]"
+          arrowColour="stroke-[#FF9245]"
+          href="/"
+        />
+      </li>
+      <li class="mt-6">
+        <ArrowColourButton
+          text="My work"
+          borderColour="border-[#5083FF]"
+          arrowColour="stroke-[#5083FF]"
+          href="/"
+        />
+      </li>
+      <li class="mt-6">
+        <ArrowColourButton
+          text="About me"
+          borderColour="border-[#6E6CCC]"
+          arrowColour="stroke-[#6E6CCC]"
+          href="/"
+        />
+      </li>
+      <li class="mt-6">
+        <ArrowColourButton
+          text="About me"
+          borderColour="border-[#FF660B]"
+          arrowColour="stroke-[#FF660B]"
+          href="/"
+        />
+      </li>
+      <li class="mt-20">
+        <Buttons text="Contact me" buttonType="mobileMenuPrimary" href="/" />
+      </li>
+    </ul>
   </nav>
 </header>

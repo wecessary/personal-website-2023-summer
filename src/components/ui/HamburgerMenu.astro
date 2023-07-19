@@ -1,0 +1,44 @@
+<script>
+  const mobileMenu = document.querySelector(".mobile-nav-menu");
+  const mobileMenuButton = document.querySelector(".mobile-menu-button");
+  const line1 = document.querySelector(".line-1");
+  const line2 = document.querySelector(".line-2");
+  const line3 = document.querySelector(".line-3");
+
+  mobileMenuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+
+    if (!mobileMenu?.classList.contains("hidden")) {
+      mobileMenu?.classList.add("animate-fade-in");
+    }
+
+    line2?.classList.toggle("opacity-0");
+    line1?.classList.toggle("rotate-45");
+    line1?.classList.toggle("translate-y-0.5");
+    line3?.classList.toggle("-translate-y-2.5");
+    line3?.classList.toggle("-rotate-45");
+
+    document.scrollingElement?.classList.toggle("overflow-hidden");
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1023) {
+      mobileMenu?.classList.add("hidden");
+      document.scrollingElement?.classList.remove("overflow-hidden");
+      line2?.classList.remove("opacity-0");
+      line1?.classList.remove("rotate-45");
+      line1?.classList.remove("translate-y-0.5");
+      line3?.classList.remove("-translate-y-2.5");
+      line3?.classList.remove("-rotate-45");
+    }
+  });
+</script>
+
+<button class="mobile-menu-button inline-flex flex-col gap-1 lg:hidden">
+  <div class="line-1 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
+  </div>
+  <div class="line-2 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
+  </div>
+  <div class="line-3 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
+  </div>
+</button>
