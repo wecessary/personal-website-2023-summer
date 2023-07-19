@@ -1,0 +1,23 @@
+---
+import Arrow from "../../icons/Arrow.astro";
+
+interface Props {
+  borderColour: `border-${string}`;
+  arrowColour: `stroke-${string}`;
+  text: string;
+  href: string;
+}
+
+const { href, text, borderColour, arrowColour } = Astro.props;
+
+const arrowStyles = `w-6 h-6 ${arrowColour}`;
+//Astro bug: if you directly pass template literate in Arrow component, it will not work
+---
+
+<a
+  href={href}
+  class=`w-44 inline-flex justify-between items-center gap-4 border-b-2 ${borderColour}`
+>
+  <span class="text-3xl">{text}</span>
+  <span><Arrow styles={arrowStyles} /></span>
+</a>

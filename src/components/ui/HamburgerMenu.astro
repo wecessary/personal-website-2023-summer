@@ -4,12 +4,24 @@
 
   mobileMenuButton?.addEventListener("click", () => {
     mobileMenu?.classList.toggle("hidden");
+
+    if (!mobileMenu?.classList.contains("hidden")) {
+      mobileMenu?.classList.add("animate-fade-in");
+    }
+
+    document.scrollingElement?.classList.toggle("overflow-hidden");
   });
 
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) {
+      mobileMenu?.classList.add("hidden");
+      document.scrollingElement?.classList.remove("overflow-hidden");
+    }
+  });
 </script>
 
 <button class="mobile-menu-button inline-flex flex-col gap-1 lg:hidden">
-  <div class="h-1 w-7 bg-gray-600 rounded-xl"></div>
-  <div class="h-1 w-7 bg-gray-600 rounded-xl"></div>
-  <div class="h-1 w-7 bg-gray-600 rounded-xl"></div>
+  <div class="h-[2px] w-7 bg-gray-600 rounded-xl"></div>
+  <div class="h-[2px] w-7 bg-gray-600 rounded-xl"></div>
+  <div class="h-[2px] w-7 bg-gray-600 rounded-xl"></div>
 </button>
