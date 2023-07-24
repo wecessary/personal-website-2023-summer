@@ -1,0 +1,77 @@
+---
+import "../../styles/float-animation.css";
+
+interface Props {
+  styles?: string;
+}
+const { styles } = Astro.props;
+---
+
+<svg
+  class={styles}
+  xmlns="http://www.w3.org/2000/svg"
+  width="80"
+  height="80"
+  viewBox="0 0 80 80"
+  fill="none"
+>
+  <path
+    d="M57.2495 25.6855H22.2797L9 38.7829L38.8074 68.2132L39.7671 69.1602L40.7262 68.2132L70.5385 38.7829L57.2495 25.6855ZM39.7668 66.1018L37.2634 63.6308L12.1022 38.7829L23.1852 27.8492H56.3431L67.4372 38.7829L42.2702 63.6311L39.7668 66.1018Z"
+    fill="#191818"></path>
+  <path
+    d="M28.5195 37.7012L37.2651 63.6312L38.8088 68.2134L39.7685 69.1603L40.7275 68.2134L42.2715 63.6312L51.0128 37.7012H28.5195ZM39.7681 64.2081L31.5577 39.8648H47.9734L39.7681 64.2081Z"
+    fill="#191818"></path>
+  <path
+    d="M31.9732 39.8633H10.5508V37.6996H28.1022L21.7923 27.3247L23.6717 26.2109L31.9732 39.8633Z"
+    fill="#191818"></path>
+  <path
+    d="M29.9099 40.6716L21.793 27.3243L23.6724 26.2106L30.1668 36.8903L38.9111 26.0918L40.6222 27.4431L29.9099 40.6716Z"
+    fill="#191818"></path>
+  <path
+    d="M49.6209 40.6716L38.9102 27.4431L40.6212 26.0918L49.364 36.8903L55.8572 26.2106L57.7366 27.3243L49.6209 40.6716Z"
+    fill="#191818"></path>
+  <path
+    d="M55.8568 26.209L47.5586 39.861H68.9915V37.6963H51.4337L57.7414 27.3292L55.8568 26.209Z"
+    fill="#191818"></path>
+  <path
+    class="animate-float-left"
+    d="M23.2069 15.8633L21.793 17.2297L25.8687 21.4037L27.2735 20.0403L23.2069 15.8633Z"
+    fill="#5083FF"
+    stroke="#5083FF"
+    stroke-width="3"
+    stroke-miterlimit="10"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float-left"
+    d="M30.8744 10.916L29.0859 11.7515L31.5571 17.011L33.3359 16.1755L30.8744 10.916Z"
+    fill="#5083FF"
+    stroke="#5083FF"
+    stroke-width="3"
+    stroke-miterlimit="10"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float"
+    d="M39.8291 10L37.8516 10.0656L38.0042 15.8614L39.9728 15.7922L39.8291 10Z"
+    fill="#5083FF"
+    stroke="#5083FF"
+    stroke-width="3"
+    stroke-miterlimit="10"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float-right"
+    d="M49.7673 11.7485L47.9934 10.8828L45.3516 16.0607L47.1193 16.919L49.7673 11.7485Z"
+    fill="#5083FF"
+    stroke="#5083FF"
+    stroke-width="3"
+    stroke-miterlimit="10"
+    stroke-linejoin="round"></path>
+
+  <path
+    class="animate-float-right"
+    d="M55.1006 17.1915L53.5575 15.752L49.8477 21.0435L51.3864 22.473L55.1006 17.1915Z"
+    fill="#5083FF"
+    stroke="#5083FF"
+    stroke-width="3"
+    stroke-miterlimit="10"
+    stroke-linejoin="round"></path>
+</svg>

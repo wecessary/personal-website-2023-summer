@@ -1,0 +1,42 @@
+---
+import Diamond from "../icons/Diamond.astro";
+import Zen from "../icons/Zen.astro";
+import Celebrate from "../illustrations/Celebrate.astro";
+import SectionSubtitleP from "../ui/text/SectionSubtitleP.astro";
+import SectionTitleH3 from "../ui/text/SectionTitleH3.astro";
+---
+
+<div class="flex justify-center mt-20">
+  <SectionTitleH3>
+    <span class="flex flex-col items-center lg:flex-row">
+      <span>Lifetime</span>
+      <span><Diamond styles=" w-20 h-20" /></span>
+      <span>Gurantee</span>
+    </span>
+  </SectionTitleH3>
+</div>
+
+<div class="flex justify-center">
+  <SectionSubtitleP>
+    <span
+      >Rigorously tested. Every website I build is designed to give great and
+      consistent performance, time after time.
+    </span>
+  </SectionSubtitleP>
+</div>
+
+<div
+  class="mt-5 flex flex-col lg:flex-row lg:justify-center items-center gap-2"
+>
+  <Zen styles="w-12 h-12 xl:w-14 xl:h-14" />
+  <h3 class="text-gray-800">Enjoy peace of mind</h3>
+</div>
+<div class="flex justify-center">
+  <p class="text-gray-500 max-w-lg text-center">
+    If the website does not perform the way it is intended, I will fix it. Free
+    of charge.
+  </p>
+</div>
+<div class="flex justify-center">
+  <Celebrate styles="w-80 md:w-[400px] lg:w-[500px] h-auto" />
+</div>

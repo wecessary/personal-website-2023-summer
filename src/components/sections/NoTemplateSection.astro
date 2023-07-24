@@ -1,12 +1,12 @@
 ---
-import Strikethrough from "./Strikethrough.astro";
-import Brain from "./icons/Brain.astro";
-import Commet from "./icons/Commet.astro";
-import Maintenance from "./icons/Maintenance.astro";
-import Success from "./illustrations/Success.astro";
-import SectionTitleH3 from "./ui/text/SectionTitleH3.astro";
-import SectionSubtitleP from "./ui/text/SectionSubtitleP.astro";
-import SmallPargraph from "./ui/text/SmallPargraph.astro";
+import Strikethrough from "../Strikethrough.astro";
+import Brain from "../icons/Brain.astro";
+import Commet from "../icons/Commet.astro";
+import Maintenance from "../icons/Maintenance.astro";
+import Success from "../illustrations/Success.astro";
+import SectionTitleH3 from "../ui/text/SectionTitleH3.astro";
+import SectionSubtitleP from "../ui/text/SectionSubtitleP.astro";
+import SmallPargraph from "../ui/text/SmallPargraph.astro";
 ---
 
 <section>
@@ -32,7 +32,7 @@ import SmallPargraph from "./ui/text/SmallPargraph.astro";
   <div
     class="mt-10 flex flex-col items-center lg:flex-row lg:items-start lg:justify-center"
   >
-    <Success styles="relative z-20 w-80 md:w-[400px] lg:w-[500px] h-auto" />
+    <Success styles="w-80 md:w-[400px] lg:w-[500px] h-auto" />
     <div>
       <SmallPargraph
         mt={false}
@@ -42,7 +42,7 @@ import SmallPargraph from "./ui/text/SmallPargraph.astro";
         <Brain slot="icon" styles="w-12 h-12 xl:w-14 xl:h-14" />
       </SmallPargraph>
       <SmallPargraph
-        title="Enjoy the fast performance."
+        title="Enjoy fast performance."
         description="Use industry standard frameworks and technologies to ensure yourwebsites will be blazingly fast."
       >
         <Commet slot="icon" styles="w-12 h-12 xl:w-14 xl:h-14" />

@@ -1,0 +1,41 @@
+.animate-float-left {
+  animation: float-left 1s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.animate-float-right {
+  animation: float-right 1s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.animate-float {
+  animation: float 1s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes float-left {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateX(-2px) translateY(-2px);
+  }
+}
+
+@keyframes float-right {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateX(2px) translateY(-2px);
+  }
+}
