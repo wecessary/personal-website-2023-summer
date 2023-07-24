@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         sans: ["Futura", ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        "graph-papper": "url('/images/graph-paper.svg')",
+      },
     },
   },
   plugins: [],
