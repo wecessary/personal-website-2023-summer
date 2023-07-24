@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  mt?: boolean;
+}
+const { title, description, mt = true } = Astro.props;
+---
+
+<div
+  class={`${
+    mt && "mt-10"
+  } flex flex-col items-center lg:items-start gap-y-2 lg:gap-y-0 lg:flex-row gap-x-4`}
+>
+  <slot name="icon" />
+  <div>
+    <h4 class="text-center lg:text-left">
+      {title}
+    </h4>
+    <p class="text-gray-500 max-w-lg text-center lg:text-left">
+      {description}
+    </p>
+  </div>
+</div>

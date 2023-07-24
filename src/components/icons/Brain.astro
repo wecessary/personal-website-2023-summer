@@ -1,0 +1,112 @@
+---
+interface Props {
+  styles?: string;
+}
+const { styles } = Astro.props;
+---
+
+<style>
+  .animate-float-left {
+    animation: float-left 1s ease-in-out infinite;
+    animation-direction: alternate;
+  }
+
+  .animate-float-right {
+    animation: float-right 1s ease-in-out infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes float-left {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateX(-2px) translateY(-2px);
+    }
+  }
+
+  @keyframes float-right {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateX(2px) translateY(-2px);
+    }
+  }
+</style>
+
+<svg
+  class={styles}
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 40 40"
+  fill="none"
+>
+  <path
+    d="M16.175 18.9066C13.3892 17.2835 12.5094 13.5946 14.2689 10.791M25.119 19.0541C25.119 16.2506 27.465 13.8897 30.2508 13.8897M6.64453 20.5296C8.69725 19.2016 11.3365 19.792 12.6561 21.8577"
+    stroke="#303C42"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    d="M20.7293 30.2145C25.4213 31.5427 30.4065 29.0342 31.8726 24.3123C34.512 23.427 35.9781 20.4758 35.0985 17.8198C34.3653 15.9016 32.6058 14.4261 30.5531 14.2785C29.5268 11.1799 26.4476 9.40918 23.222 9.99941C20.876 7.63851 17.2105 7.78606 15.011 10.147C14.7178 10.5896 14.4246 11.0323 14.1313 11.3274H13.3982C9.29275 11.3274 6.06705 14.5736 6.06705 18.7052C6.06705 19.443 6.21366 20.3283 6.50691 21.0662C4.4542 22.5417 4.01433 25.1977 5.48057 27.2635C6.3603 28.4438 7.6799 29.1817 8.99951 29.1817H9.29275"
+    stroke="#303C42"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    d="M8.98828 29.8249C8.98828 27.5432 11.6141 25.6934 14.8532 25.6934C18.0923 25.6934 20.7181 27.5432 20.7181 29.8249C20.7181 32.1067 18.0923 33.9565 14.8532 33.9565C11.6141 33.9565 8.98828 32.1067 8.98828 29.8249Z"
+    stroke="#303C42"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    d="M10.4559 16.8407C10.4559 15.9554 11.7755 15.3652 13.3884 15.3652M22.1857 22.7429C22.3324 19.6442 20.133 16.9882 17.0539 16.8407C18.2269 16.8407 19.2534 14.9225 19.2534 12.4141M22.1857 15.3652C22.1857 16.2505 23.5054 16.8407 25.1182 16.8407M29.5169 16.8407C29.5169 18.0212 32.156 19.0541 35.3819 19.0541M16.3208 30.1207C16.3208 29.2354 13.0951 28.6452 8.98967 28.6452M10.4559 20.0869C10.4559 22.5954 9.13629 24.2186 7.52344 24.2186M29.5169 27.1696C29.5169 24.6612 27.6109 22.7429 25.1182 22.7429M27.3175 23.4807C27.3175 25.5466 25.7047 27.1696 23.652 27.1696M14.8546 33.8097L13.3884 38.9741H17.0539C17.0539 38.9741 19.8397 30.1207 23.3587 30.1207M16.3208 21.2674C16.3208 22.1527 17.6404 22.7429 19.2534 22.7429"
+    stroke="#303C42"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float-left"
+    d="M2.88672 6.23828C4.30149 6.9911 6.75522 8.10591 7.52284 9.73975"
+    stroke="#FA8787"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float-left"
+    d="M11.9805 7.63533C11.2363 6.47443 10.8414 4.90014 10.0352 3.64258"
+    stroke="#FA8787"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float-left"
+    d="M18.6863 5.98027C18.1767 4.75642 18.2045 3.39997 17.6523 2.07422"
+    stroke="#FA8787"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float-right"
+    d="M24.6047 6.54653C24.4189 5.50617 25.6366 3.6291 27.0874 3.05273"
+    stroke="#FA8787"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float-right"
+    d="M29.1194 8.29263C28.7869 8.18011 28.8924 8.26336 29.2431 7.67774C30.0273 6.36816 31.9851 5.58026 33.3083 4.79883"
+    stroke="#FA8787"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    class="animate-float-right"
+    d="M32.2773 11.2789C33.3435 12.0086 35.4482 8.54823 36.6645 8.30078"
+    stroke="#FA8787"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+</svg>
