@@ -1,0 +1,86 @@
+---
+import DiamondInHands from "../icons/DiamondInHands.astro";
+import Lightning from "../icons/Lightning.astro";
+import Message from "../icons/Message.astro";
+import Sparks from "../icons/Sparks.astro";
+import CodeIllustration from "../illustrations/CodeIllustration.astro";
+import SectionSubtitleP from "../ui/text/SectionSubtitleP.astro";
+import SectionTitleH3 from "../ui/text/SectionTitleH3.astro";
+import SmallPargraph from "../ui/text/SmallPargraph.astro";
+---
+
+<style>
+  .animate-blink {
+    animation: blink 1.25s infinite;
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<div class="mt-20 flex justify-center">
+  <SectionTitleH3>
+    <span class="block">Work with someone who</span>
+    <span class="block">
+      <div class="inline relative">
+        <span>designs</span>
+        <Sparks styles="absolute right-0 top-0" />
+      </div>
+      <span> and</span>
+      <div
+        class="inline-flex items-center overflow-hidden relative typewriter-target"
+      >
+        <span class="opacity-10">codes</span>
+        <span class="absolute left-0 opacity-1"
+          ><span class="typewriter"></span>
+          <div
+            class="animate-blink absolute top-0 right-0 bg-[#FF660B] h-full w-1"
+          >
+          </div>
+        </span>
+      </div>
+      <span> your website</span>
+    </span>
+  </SectionTitleH3>
+</div>
+
+<div class="flex justify-center">
+  <SectionSubtitleP>Work with one person. It's easier.</SectionSubtitleP>
+</div>
+
+<div
+  class="mt-10 flex flex-col gap-y-5 lg:gap-y-0 items-center lg:flex-row lg:items-start lg:justify-center"
+>
+  <CodeIllustration styles="w-80 md:w-[400px] lg:w-[500px] h-auto" />
+  <div>
+    <SmallPargraph
+      mt={false}
+      title="Keep communications simple."
+      description="Communicating between designers and developers can be tricky. Liaise with one person who does both."
+    >
+      <Message slot="icon" styles=" w-10 h-10 xl:w-12 xl:h-12" />
+    </SmallPargraph>
+    <SmallPargraph
+      title="Make design choices that give great web performance."
+      description="Some designs are aesthetically pleasing but would slow down performance and/or hurt Google search ranking. Our websites will avoid these pitfalls."
+    >
+      <Lightning slot="icon" styles="w-12 h-12 xl:w-14 xl:h-14" />
+    </SmallPargraph>
+    <SmallPargraph
+      title="It's cheaper for you."
+      description="A cost effective one stop solution."
+    >
+      <DiamondInHands slot="icon" styles="w-12 h-12 xl:w-14 xl:h-14" />
+    </SmallPargraph>
+  </div>
+</div>
+
+<script>
+  import "../../scripts/observer.ts";
+</script>
