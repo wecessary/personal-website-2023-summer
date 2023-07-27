@@ -5,7 +5,6 @@ export default function typewriter(content: string) {
 
   if (typewriter) {
     setInterval(() => {
-      if (!content) return;
       if (!typewriter) return;
       if (i < content.length) {
         typewriter.textContent += content.charAt(i);
