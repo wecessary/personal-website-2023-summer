@@ -6,11 +6,35 @@ import SectionSubtitleP from "../ui/text/SectionSubtitleP.astro";
 import SectionTitleH3 from "../ui/text/SectionTitleH3.astro";
 ---
 
+<style>
+  .animate-diamond {
+    animation: diamond 2s ease-in-out;
+  }
+
+  @keyframes diamond {
+    0%,
+    30% {
+      transform: translateY(70px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-paused {
+    animation-play-state: paused;
+  }
+</style>
+
 <div class="flex justify-center mt-20">
   <SectionTitleH3>
     <span class="flex flex-col items-center lg:flex-row">
       <span>Lifetime</span>
-      <span><Diamond styles="w-20 h-20" /></span>
+      <div class="overflow-hidden diamond-target">
+        <span class="inline-block animate-diamond animate-paused"
+          ><Diamond styles=" w-20 h-20" /></span
+        >
+      </div>
       <span>Gurantee</span>
     </span>
   </SectionTitleH3>
@@ -40,3 +64,5 @@ import SectionTitleH3 from "../ui/text/SectionTitleH3.astro";
 <div class="mt-10 flex justify-center">
   <Celebrate styles="w-80 md:w-[400px] lg:w-[500px] h-auto" />
 </div>
+
+
