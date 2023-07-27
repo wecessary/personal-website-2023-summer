@@ -1,6 +1,6 @@
 import typewriter from "./typewritterEffect";
 
-let target = document.querySelector(".should-strike-through");
+let strikeThroughTarget = document.querySelector(".should-strike-through");
 let typewriterTarget = document.querySelector(".typewriter-target");
 let hasCalledTypewriter = false;
 
@@ -27,4 +27,4 @@ let io = new IntersectionObserver(
   }
 );
 typewriterTarget && io.observe(typewriterTarget);
-target && io.observe(target);
+strikeThroughTarget && io.observe(strikeThroughTarget);
