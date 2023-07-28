@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/ui/Navbar.astro";
+import Footer from "../components/ui/Footer.astro";
 
 interface Props {
   title: string;
@@ -23,6 +24,7 @@ const { description } = Astro.props;
   </head>
   <body class="bg-white bg-graph-papper">
     <Navbar />
-    <slot /></body
-  >
+    <slot />
+    <Footer />
+  </body>
 </html>
