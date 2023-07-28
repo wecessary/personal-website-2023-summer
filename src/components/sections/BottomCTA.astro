@@ -1,0 +1,31 @@
+---
+import CurlyLines from "../icons/CurlyLines.astro";
+import Buttons from "../ui/buttons/Buttons.astro";
+import SectionTitleH3 from "../ui/text/SectionTitleH3.astro";
+
+const colourTextStyles =
+  "rounded-xl py-4 text-2xl md:text-4xl  lg:text-5xl font-bold text-center w-[290px] md:w-[578px] lg:w-[796px]";
+---
+
+<div class="mt-20 flex justify-center">
+  <SectionTitleH3>
+    <div class="inline-block relative">
+      <span aria-hidden="true" class="absolute -top-5"
+        ><CurlyLines styles=" w-16 h-4" /></span
+      >
+      <span>Sick</span>
+    </div>
+    <span>of your Wordpress website?</span>
+  </SectionTitleH3>
+</div>
+<div class="flex flex-col items-center">
+  <p class={`mt-4 bg-[#FBC677] text-[#FE4F04] ${colourTextStyles}`}>
+    No problem.
+  </p>
+  <p class={`mt-2 bg-[#A4D1FB] text-[#285F93] ${colourTextStyles}`}>
+    Let's talk.
+  </p>
+</div>
+<div class="mt-4 mb-20 flex justify-center">
+  <Buttons buttonType="primary" text="Contact me" href="/" />
+</div>
