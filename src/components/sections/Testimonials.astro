@@ -1,0 +1,51 @@
+---
+import Arrow from "../icons/Arrow.astro";
+import CurlyArrow from "../icons/CurlyArrow.astro";
+---
+
+<style>
+  .animate-testimonial {
+    animation: move-down 4.5s ease;
+    animation-fill-mode: forwards;
+  }
+  @keyframes move-down {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    100% {
+      transform: translateY(200px) translateX(-500px);
+    }
+  }
+
+  .animate-paused {
+    animation-play-state: paused;
+  }
+</style>
+
+<div class="mt-20 flex flex-col items-center relative">
+  <div class="relative overflow-hidden">
+    <div
+      aria-hidden="true"
+      class="animate-testimonial animate-paused absolute w-full h-full bg-white"
+    >
+    </div>
+    <CurlyArrow styles="w-24 h-12 2xl:w-28 2xl:h-14" />
+  </div>
+  <p
+    class="text-center xl:text-xl 2xl:text-2xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl text-gray-800"
+  >
+    {
+      `"Wesley was great. Flexible and quick with both the design and development
+    process. He also listened to and implemented our requests and ideas. We’re
+    very happy with our website."`
+    }
+  </p>
+  <p class="mt-4 lg:mt-2 text-gray-800">Karen Chen, Marketing Manager</p>
+  <p class="text-gray-500 testimonial-target">New Zealand Blue Spring Water</p>
+  <a
+    class="inline-flex items-center underline hover:no-underline text-gray-400 text-sm"
+    href="https://www.waizwater.com/en-GB"
+    ><span>see the website</span>
+    <span><Arrow styles="w-4 h-4 -rotate-45 stroke-gray-400" /></span>
+  </a>
+</div>

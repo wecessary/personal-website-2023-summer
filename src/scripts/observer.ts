@@ -3,6 +3,7 @@ import typewriter from "./typewritterEffect";
 let strikeThroughTarget = document.querySelector(".should-strike-through");
 let typewriterTarget = document.querySelector(".typewriter-target");
 let diamondTarget = document.querySelector(".diamond-target");
+let testimonialTarget = document.querySelector(".testimonial-target");
 let hasCalledTypewriter = false;
 
 let io = new IntersectionObserver(
@@ -20,6 +21,12 @@ let io = new IntersectionObserver(
         typewriter("codes");
       }
 
+      if (classList.contains("testimonial-target")) {
+        document
+          .querySelector(".animate-testimonial")
+          ?.classList.remove("animate-paused");
+      }
+
       if (classList.contains("diamond-target")) {
         document
           .querySelector(".animate-diamond")
@@ -34,3 +41,4 @@ let io = new IntersectionObserver(
 typewriterTarget && io.observe(typewriterTarget);
 strikeThroughTarget && io.observe(strikeThroughTarget);
 diamondTarget && io.observe(diamondTarget);
+testimonialTarget && io.observe(testimonialTarget);
