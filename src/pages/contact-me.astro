@@ -1,0 +1,25 @@
+---
+import Handdrawn from "../components/icons/Handdrawn.astro";
+import PageLayout from "../layout/PageLayout.astro";
+---
+
+<PageLayout
+  bodyStyles="min-h-screen flex flex-col"
+  title="Wesley Jessie - Freelance web design and development"
+  description="Get custom made websites that stand out from templates. Life time gurantee."
+>
+  <main class="flex-1 flex justify-center items-center">
+    <h1 class="text-xl lg:text-5xl font-bold">
+      <span class="block">
+        <span>Let's make the</span>
+        <div class="inline-block relative">
+          <span> best possible</span><Handdrawn
+            styles="absolute bottom-0 w-full h-auto"
+          />
+        </div>
+      </span>
+      <span> website for you</span>
+      <span class="text-base font-normal">(within your budget)</span>
+    </h1>
+  </main>
+</PageLayout>
