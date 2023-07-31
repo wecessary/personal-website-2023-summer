@@ -1,0 +1,34 @@
+---
+import Clipboard from "../../icons/Clipboard.astro";
+---
+
+<button
+  class="w-36 clipboard flex gap-x-1 items-center px-1 py-1 border-gray-300 border-[1px] rounded-md"
+  ><span><Clipboard styles="w-4 h-4  stroke-gray-300 fill-gray-300" /></span>
+  <span class="clipboardText text-sm text-gray-300">copy to clipboard</span>
+</button>
+
+<script>
+  const clipboardBtn = document.querySelector(".clipboard");
+  const clipboardText = document.querySelector(".clipboardText");
+  const textToCopy = "wesley@wesleyjessie.com";
+  let timer: number;
+
+  async function updateClipboard() {
+    clearTimeout(timer);
+    if (clipboardBtn && clipboardText) {
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        clipboardText.textContent = "copied!";
+      } catch (err) {
+        clipboardText.textContent = "Sorry your browser does not allow this.";
+      } finally {
+        timer = setTimeout(() => {
+          clipboardText.textContent = "copy to clipboard";
+        }, 3000);
+      }
+    }
+  }
+
+  clipboardBtn?.addEventListener("click", updateClipboard);
+</script>

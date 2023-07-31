@@ -1,0 +1,43 @@
+---
+import HanddrawnCirle from "../components/icons/HanddrawnCirle.astro";
+import CopyEmail from "../components/ui/buttons/CopyEmail.astro";
+import PageLayout from "../layout/PageLayout.astro";
+---
+
+<PageLayout
+  bodyStyles="min-h-screen flex flex-col"
+  title="Wesley Jessie - Freelance web design and development"
+  description="Get custom made websites that stand out from templates. Life time gurantee."
+>
+  <main class="my-20 lg:my-0 flex-1 flex flex-col justify-center items-center">
+    <h1
+      class="text-center text-gray-800 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
+    >
+      Contact me to get started
+    </h1>
+    <h2
+      class="mt-2 text-gray-500 text-center text-lg lg:text-xl xl:text-2xl max-w-[260px] md:max-w-lg lg:max-w-2xl leading-5"
+    >
+      <span>Let's make the</span>
+      <div class="inline-block relative">
+        <span class=""> best possible</span><HanddrawnCirle
+          styles="absolute bottom-0 w-full h-full"
+        />
+      </div>
+      <span> website for you</span>
+      <span class="text-xs font-normal">(within your budget)</span>
+    </h2>
+
+    <div
+      class="mt-10 border-2 p-6 md:p-12 xl:p-12 lg:mb-0 border-gray-300 rounded-lg text-gray-800"
+    >
+      <div class="flex flex-col lg:flex-row items-center gap-x-2">
+        <p class="text-gray-800 text-lg">wesley@wesleyjessie.com</p>
+        <CopyEmail />
+      </div>
+      <p class="text-gray-800 text-lg text-center lg:text-left mt-5">
+        +44 7597 296544
+      </p>
+    </div>
+  </main>
+</PageLayout>
