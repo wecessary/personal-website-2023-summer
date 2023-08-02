@@ -56,15 +56,15 @@ const { text, tooltip } = Astro.props;
       });
     }
   });
-  
+
   //fix safari hover problem on mobile
   document.addEventListener("click", (e) => {
     tooltips.forEach((tooltip) => {
-      if (e.target !== tooltip) {
-        const tooltipContent = tooltip.querySelectorAll("span");
-        tooltipContent[1]?.classList.remove("group-hover:inline-block");
-        tooltipContent[1]?.classList.remove("group-focus:inline-block");
-      }
+      if (tooltip.contains(e.target as Node) || e.target === tooltip) return; //if is clicking the tooltip, do nothing
+
+      const tooltipContent = tooltip.querySelectorAll("span");
+      tooltipContent[1]?.classList.remove("group-hover:inline-block");
+      tooltipContent[1]?.classList.remove("group-focus:inline-block");
     });
   });
 </script>
