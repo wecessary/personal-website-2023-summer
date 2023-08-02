@@ -21,7 +21,7 @@ const { text, tooltip } = Astro.props;
           <span>
             <QuestionMark styles="w-5 h-5 fill-gray-400" />
           </span>
-          <span class="z-50 hidden group-focus:inline-block group-hover:inline-block right-3 xl:left-6 absolute border-[1px] border-gray-400 w-60 p-3 rounded-lg backdrop-blur-xl">
+          <span class="z-50 hidden right-3 xl:left-6 absolute border-[1px] border-gray-400 w-60 p-3 rounded-lg backdrop-blur-xl">
             {tooltip}
           </span>
         </>
@@ -40,14 +40,15 @@ const { text, tooltip } = Astro.props;
 
     ["touchstart", "mouseenter", "focus"].forEach((event) => {
       tooltip.addEventListener(event, () => {
-        tooltipContent[1]?.classList.add("group-hover:inline-block");
-        tooltipContent[1]?.classList.add("group-focus:inline-block");
+        tooltipContent[1]?.classList.remove("hidden");
+        tooltipContent[1]?.classList.add("inline-block");
       });
     });
 
     ["touchend", "mouseleave", "blur"].forEach((event) => {
       tooltip.addEventListener(event, () => {
-        tooltipContent[1]?.classList.remove("group-hover:inline-block");
+        tooltipContent[1]?.classList.add("hidden");
+        tooltipContent[1]?.classList.remove("inline-block");
       });
     });
   });
@@ -56,8 +57,8 @@ const { text, tooltip } = Astro.props;
     if (e.key === "Escape") {
       tooltips.forEach((tooltip) => {
         const tooltipContent = tooltip.querySelectorAll("span");
-        tooltipContent[1]?.classList.remove("group-hover:inline-block");
-        tooltipContent[1]?.classList.remove("group-focus:inline-block");
+        tooltipContent[1]?.classList.remove("inline-block");
+        tooltipContent[1]?.classList.add("hidden");
       });
     }
   });
