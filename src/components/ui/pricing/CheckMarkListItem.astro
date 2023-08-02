@@ -21,7 +21,7 @@ const { text, tooltip } = Astro.props;
           <span>
             <QuestionMark styles="w-5 h-5 fill-gray-400" />
           </span>
-          <span class="z-50 hidden group-focus:inline-block group-hover:inline-block right-3 xl:left-6 absolute border-[1px] border-gray-400 w-60 p-3 rounded-lg backdrop-blur-xl">
+          <span class="z-50 hidden lg:group-focus:inline-block group-hover:inline-block right-3 xl:left-6 absolute border-[1px] border-gray-400 w-60 p-3 rounded-lg backdrop-blur-xl">
             {tooltip}
           </span>
         </>
@@ -43,7 +43,7 @@ const { text, tooltip } = Astro.props;
     });
 
     tooltip.addEventListener("focus", () => {
-      tooltipContent[1]?.classList.add("group-focus:inline-block");
+      tooltipContent[1]?.classList.add("lg:group-focus:inline-block");
     });
   });
 
