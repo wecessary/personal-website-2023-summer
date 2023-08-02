@@ -33,27 +33,27 @@ const { text, tooltip } = Astro.props;
 <script>
   //following accesibility rule here https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tooltip_role
 
-  const tooltips = document.querySelectorAll('[role="tooltip"]');
+  // const tooltips = document.querySelectorAll('[role="tooltip"]');
 
-  tooltips.forEach((tooltip) => {
-    const tooltipContent = tooltip.querySelectorAll("span");
+  // tooltips.forEach((tooltip) => {
+  //   const tooltipContent = tooltip.querySelectorAll("span");
 
-    tooltip.addEventListener("mouseenter", () => {
-      tooltipContent[1]?.classList.add("group-hover:inline-block");
-    });
+  //   tooltip.addEventListener("mouseenter", () => {
+  //     tooltipContent[1]?.classList.add("group-hover:inline-block");
+  //   });
 
-    tooltip.addEventListener("focus", () => {
-      tooltipContent[1]?.classList.add("lg:group-focus:inline-block");
-    });
-  });
+  //   tooltip.addEventListener("focus", () => {
+  //     tooltipContent[1]?.classList.add("lg:group-focus:inline-block");
+  //   });
+  // });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      tooltips.forEach((tooltip) => {
-        const tooltipContent = tooltip.querySelectorAll("span");
-        tooltipContent[1]?.classList.remove("group-hover:inline-block");
-        tooltipContent[1]?.classList.remove("lg:group-focus:inline-block");
-      });
-    }
-  });
+  // document.addEventListener("keydown", (e) => {
+  //   if (e.key === "Escape") {
+  //     tooltips.forEach((tooltip) => {
+  //       const tooltipContent = tooltip.querySelectorAll("span");
+  //       tooltipContent[1]?.classList.remove("group-hover:inline-block");
+  //       tooltipContent[1]?.classList.remove("lg:group-focus:inline-block");
+  //     });
+  //   }
+  // });
 </script>
