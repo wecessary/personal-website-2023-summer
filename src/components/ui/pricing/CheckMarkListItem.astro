@@ -44,6 +44,7 @@ const { text, tooltip } = Astro.props;
 
     tooltip.addEventListener("focus", () => {
       tooltipContent[1]?.classList.add("group-focus:inline-block");
+      tooltipContent[1]?.classList.add("bg-red-200");
     });
   });
 
