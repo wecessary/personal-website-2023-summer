@@ -1,0 +1,59 @@
+---
+import CheckMark from "../../icons/CheckMark.astro";
+import QuestionMark from "../../icons/QuestionMark.astro";
+
+interface Props {
+  text: string;
+  tooltip?: string | undefined;
+}
+const { text, tooltip } = Astro.props;
+---
+
+<li class="mt-2 flex justify-between text-gray-800">
+  <span class="flex items-center">
+    <span><CheckMark styles="w-5 h-5 fill-gray-800" /></span>
+    <span class="ml-3">{text}</span>
+  </span>
+  <button role="tooltip" class="ml-2 relative group">
+    {
+      tooltip && (
+        <>
+          <span>
+            <QuestionMark styles="w-5 h-5 fill-gray-400" />
+          </span>
+          <span class="z-50 hidden group-focus:inline-block group-hover:inline-block right-3 xl:left-6 absolute border-[1px] border-gray-400 w-60 p-3 rounded-lg backdrop-blur-xl">
+            {tooltip}
+          </span>
+        </>
+      )
+    }
+  </button>
+</li>
+
+<script>
+  //following accesibility rule here https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tooltip_role
+
+  const tooltips = document.querySelectorAll('[role="tooltip"]');
+
+  tooltips.forEach((tooltip) => {
+    const tooltipContent = tooltip.querySelectorAll("span");
+
+    tooltip.addEventListener("mouseenter", () => {
+      tooltipContent[1]?.classList.add("group-hover:inline-block");
+    });
+
+    tooltip.addEventListener("focus", () => {
+      tooltipContent[1]?.classList.add("group-focus:inline-block");
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      tooltips.forEach((tooltip) => {
+        const tooltipContent = tooltip.querySelectorAll("span");
+        tooltipContent[1]?.classList.remove("group-hover:inline-block");
+        tooltipContent[1]?.classList.remove("group-focus:inline-block");
+      });
+    }
+  });
+</script>
