@@ -38,15 +38,17 @@ const { text, tooltip } = Astro.props;
   tooltips.forEach((tooltip) => {
     const tooltipContent = tooltip.querySelectorAll("span");
 
-    tooltip.addEventListener("mouseenter", () => {
-      tooltipContent[1]?.classList.add("group-hover:inline-block");
+    ["touchstart", "mouseenter", "focus"].forEach((event) => {
+      tooltip.addEventListener(event, () => {
+        tooltipContent[1]?.classList.add("group-hover:inline-block");
+        tooltipContent[1]?.classList.add("group-focus:inline-block");
+      });
     });
 
-    tooltip.addEventListener("focus", () => {
-      tooltipContent[1]?.classList.add("group-focus:inline-block");
-    });
-    tooltip.addEventListener("mouseleave", () => {
-      tooltipContent[1]?.classList.remove("group-hover:inline-block");
+    ["touchend", "mouseleave", "blur"].forEach((event) => {
+      tooltip.addEventListener(event, () => {
+        tooltipContent[1]?.classList.remove("group-hover:inline-block");
+      });
     });
   });
 
