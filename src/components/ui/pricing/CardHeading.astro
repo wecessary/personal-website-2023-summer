@@ -1,0 +1,28 @@
+---
+interface Props {
+  name: string;
+  nameColour: `text-${string}`;
+  nameSize: string;
+  description?: string;
+  descriptionColour?: `text-${string}`;
+}
+
+const {
+  name,
+  nameColour,
+  nameSize,
+  description,
+  descriptionColour = "text-gray-800",
+} = Astro.props;
+---
+
+<div
+  class="h-36 py-5 px-5 lg:px-10 xl:px-15 2xl:px-20 flex flex-col justify-center items-center bg-stone-100 rounded-lg"
+>
+  <h2 class=`${nameColour} ${nameSize} text-center font-bold`>{name}</h2>
+  {
+    description && (
+      <p class={`${descriptionColour} text-center`}>{description}</p>
+    )
+  }
+</div>

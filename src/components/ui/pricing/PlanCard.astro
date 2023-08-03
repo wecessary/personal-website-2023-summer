@@ -1,5 +1,6 @@
 ---
 import Arrow from "../../icons/Arrow.astro";
+import CardHeading from "./CardHeading.astro";
 import CheckMarkListItem from "./CheckMarkListItem.astro";
 
 interface PlanFeature {
@@ -27,12 +28,13 @@ const {
 ---
 
 <div class="flex flex-col rounded-lg border-2 border-gray-500">
-  <div
-    class="h-32 py-10 px-5 flex flex-col items-center bg-stone-100 rounded-lg"
-  >
-    <h2 class=`${nameColour} text-xl 2xl:text-2xl font-bold`>{name}</h2>
-    <p class="text-gray-800 text-center">{description}</p>
-  </div>
+  <CardHeading
+    name={name}
+    nameSize="text-2xl 2xl:text-3xl"
+    nameColour={nameColour}
+    description={description}
+    descriptionColour="text-gray-500"
+  />
   <div class="h-20 border-t-2 border-gray-500">
     <div class="mt-4 flex flex-col items-center">
       <span class="text-gray-800 font-bold text-3xl 2xl:text-4xl">{price}</span
