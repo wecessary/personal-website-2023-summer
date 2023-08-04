@@ -4,60 +4,10 @@ import PlanCard from "../../components/ui/pricing/PlanCard.astro";
 import CardHeading from "../../components/ui/pricing/CardHeading.astro";
 import FeatureTable from "../../components/ui/pricing/FeatureTable.astro";
 import FeatureCardWrapper from "../../components/ui/pricing/FeatureCardWrapper.astro";
+import Accordion from "../../components/ui/Accordion";
+import { faqs } from "../../const/pricingFaqs";
+import { starterFeatures, plusFeatures, proFeatures, enterpriseFeatures } from "../../const/planFeatures";
 
-const starterFeatures = [
-  {
-    text: "Simple and modern designs",
-    tooltip: "Clean and modern designs that focus on simplicity and usability.",
-  },
-  {
-    text: "Mobile friendly",
-    tooltip: "Your website will look great on all devices.",
-  },
-  { text: "Lifetime Gurantee" },
-  { text: "Hosting" },
-  {
-    text: "CMS",
-    tooltip:
-      "You will be able to change the content of your website without touching the code.",
-  },
-  { text: "Basic SEO" },
-  { text: "Enquiry form" },
-];
-
-const plusFeatures = [
-  {
-    text: "Everything in Starter",
-  },
-  {
-    text: "Visually engaging designs",
-    tooltip: "Polished designs that reflect your brand.",
-  },
-  { text: "Design mockups" },
-  { text: "Full SEO" },
-  {
-    text: "1-2 custom functionalities",
-    tooltip: "E.g. login portal, search engine, and AI chatbot.",
-  },
-];
-const proFeatures = [
-  { text: "Everything in Plus" },
-  {
-    text: "For websites with more pages",
-    tooltip:
-      "Pages that share the same design are always free. For more see below.",
-  },
-  {
-    text: "1-4 custom functionalities",
-    tooltip: "E.g. login portal, search engine, and AI chatbot.",
-  },
-];
-const enterpriseFeatures = [
-  { text: "Large scale company websites" },
-  { text: "Full stack web application" },
-  { text: "Mobile app development" },
-  { text: "Minimum viable product development" },
-];
 
 const customFunctionalitiesExamples = [
   "Login portal",
@@ -65,6 +15,7 @@ const customFunctionalitiesExamples = [
   "Booking system",
   "AI chatbot",
 ];
+
 ---
 
 <PageLayout
@@ -275,5 +226,27 @@ const customFunctionalitiesExamples = [
         </div>
       </FeatureCardWrapper>
     </div>
+    <section>
+      <h2
+        class="mt-20 font-bold text-center text-5xl md:text-6xl xl:text-7xl text-gray-800"
+      >
+        FAQs
+      </h2>
+      <div class="mt-4 flex flex-col items-center mb-20">
+        {
+          faqs.map((faq) => (
+            <Accordion
+              title={faq.title}
+              sectionId={faq.sectionId}
+              accordionId={faq.accordionId}
+              content={faq.content}
+              isContentBullets={faq.isContentBullets}
+              client:visible
+            />
+          ))
+        }
+      </div>
+    </section>
   </main>
 </PageLayout>
+../../const/pricingFaqs
