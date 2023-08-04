@@ -1,15 +1,17 @@
 <script>
-  const mobileMenu = document.querySelector(".mobile-nav-menu");
-  const mobileMenuButton = document.querySelector(".mobile-menu-button");
+  const menuContent = document.querySelector(".mobile-nav-menu");
+  const menuButton = document.querySelector(".mobile-menu-button");
   const line1 = document.querySelector(".line-1");
   const line2 = document.querySelector(".line-2");
   const line3 = document.querySelector(".line-3");
 
-  mobileMenuButton?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
+  menuButton?.addEventListener("click", () => {
+    if (!menuContent || !menuButton) return;
+    menuContent.classList.toggle("hidden");
+    menuButton.setAttribute("aria-expanded", menuContent.classList.contains("hidden") ? "false" : "true"); 
 
-    if (!mobileMenu?.classList.contains("hidden")) {
-      mobileMenu?.classList.add("animate-fade-in");
+    if (!menuContent?.classList.contains("hidden")) {
+      menuContent?.classList.add("animate-fade-in");
     }
 
     line2?.classList.toggle("opacity-0");
@@ -23,7 +25,7 @@
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1023) {
-      mobileMenu?.classList.add("hidden");
+      menuContent?.classList.add("hidden");
       document.scrollingElement?.classList.remove("overflow-hidden");
       line2?.classList.remove("opacity-0");
       line1?.classList.remove("rotate-45");
@@ -32,9 +34,10 @@
       line3?.classList.remove("-rotate-45");
     }
   });
+
 </script>
 
-<button class="mobile-menu-button inline-flex flex-col gap-1 lg:hidden">
+<button aria-controls="mobile-nav-menu" aria-label="show mobile navigation menu" aria-expanded="true" class="mobile-menu-button inline-flex flex-col gap-1 lg:hidden">
   <div class="line-1 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
   </div>
   <div class="line-2 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
@@ -42,3 +45,4 @@
   <div class="line-3 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
   </div>
 </button>
+

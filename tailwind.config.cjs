@@ -11,6 +11,7 @@ module.exports = {
       },
       colors: {
         "theme-red": "#FA8787",
+        "theme-accesible-red":"#AE0505",
         "theme-orange": "#FF9245",
         "theme-blue": "#5083FF",
         "theme-purple": "#6E6CCC",
