@@ -108,7 +108,7 @@ export const faqs: FAQs[] = [
       "I code websites so I have the most precise control over the computer and use the most modern technologies.",
       "Depending on the project, I use React, Next.js, Astro, Typescript, and Tailwind CSS to build websites.",
     ],
-    sectionId: "how-long-will-it-take",
-    accordionId: "how-long-will-it-take-accordion",
+    sectionId: "what-technologies-do-you-use",
+    accordionId: "what-technologies-do-you-use-accordion",
   },
 ];
