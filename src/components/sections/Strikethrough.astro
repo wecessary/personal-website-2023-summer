@@ -1,8 +1,6 @@
 <style>
   .animate-strike {
-    width: 100%;
-    height: 8px;
-    animation: strike 1s ease-in-out;
+    animation: strike 2.5s ease-in-out;
   }
 
   @keyframes strike {
@@ -13,10 +11,15 @@
       transform: translateX(0%) scaleX(1);
     }
   }
+
+  .animate-paused {
+    animation-play-state: paused;
+  }
 </style>
 
 <div aria-hidden="true" class="inline-block relative">
   <span>template</span>
-  <span class="should-strike-through left-0 top-1/2 absolute bg-[#FA8787]"
+  <span
+    class="animate-strike animate-paused w-full h-2 left-0 top-1/2 absolute bg-theme-red"
   ></span>
 </div>
