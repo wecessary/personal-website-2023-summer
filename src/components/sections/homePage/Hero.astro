@@ -3,27 +3,29 @@ import HeroText from "../HeroText.astro";
 import Buttons from "../../ui/buttons/Buttons.astro";
 ---
 
-<div class="flex flex-col gap-6 items-center mt-16 lg:mt-24">
+<div class="flex flex-col items-center mt-16 lg:mt-24">
   <HeroText />
-  <h2 class="max-w-3xl text-lg md:text-xl text-gray-500 text-center">
+  <h2
+    class="mt-2 max-w-xs md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl text-lg md:text-xl text-gray-500 text-center"
+  >
     <span class="block">
       A freelancer developer that builds you bespoke, stunning, and fast
       websites.
     </span>
-    <span class="block">
+    <span class="block mt-1">
       Design, code, test, SEO, and deploy. All taken care of for you.
     </span>
   </h2>
-  <div class="flex gap-4">
+  <div class="mt-6 flex gap-4">
     <Buttons buttonType="primary" text="Contact me" href="/contact-me" />
     <Buttons buttonType="secondary" text="Pricing" href="/pricing/websites" />
   </div>
-  <div class="flex gap-4 items-center">
+  <div class="mt-6 flex gap-4 items-center">
     <span class="relative flex h-3 w-3">
       <span
-        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-500 opacity-75"
       ></span>
-      <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+      <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-600"></span>
     </span>
     <span class="text-gray-500">Available for freelance worldwide</span>
   </div>
