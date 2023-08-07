@@ -1,0 +1,60 @@
+---
+interface Props {
+  checked: boolean;
+  href: "/pricing/ecommerce" | "/pricing/websites";
+}
+const { checked, href } = Astro.props;
+---
+
+<style>
+  .animate-slide {
+    animation: slide-right 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  @keyframes slide-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-small-slide {
+    animation: small-slide-right 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  @keyframes small-slide-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(20%);
+    }
+  }
+
+  .animate-reverse {
+    animation-direction: reverse;
+  }
+</style>
+
+<a href={href} class="mt-2 gap-x-3 inline-flex items-center group">
+  <span class="2xl:text-lg text-gray-500">E-commerce pricing</span>
+  <div
+    class={`relative w-11 h-6 ${
+      checked ? "bg-gray-600" : "bg-gray-200"
+    } rounded-full group-hover:scale-105 transition-transform`}
+  >
+    <div
+      class=`absolute top-[2px] left-[2px] bg-white after:border-gray-100 border rounded-full h-5 w-5 animate-slide ${checked ? undefined : "animate-reverse"}`
+    >
+    </div>
+  </div>
+  <span class="text-sm text-gray-500">
+    {checked ? "On" : "Off"}
+  </span>
+  <span class="sr-only">Toggle e-commerce pricing</span>
+  <span class="sr-only"
+    >E-commerce pricing currently {checked ? "on" : "off"}</span
+  >
+</a>

@@ -49,6 +49,14 @@ export const faqs: FAQs[] = [
     accordionId: "domain-accordion",
   },
   {
+    title: "Do you make e-commerce websites?",
+    content: [
+      "Yes! Toggling e-commerce pricing by clicking the button at the top of this page.",
+    ],
+    sectionId: "e-commerce",
+    accordionId: "e-commerce-accordion",
+  },
+  {
     title:
       "I want to edit the content on my website, will I need to touch the code?",
     content: [
