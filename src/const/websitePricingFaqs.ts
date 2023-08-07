@@ -20,7 +20,7 @@ export const faqs: FAQs[] = [
   {
     title: "What is the payment schedule?",
     content: [
-      "The project is broken into two payments. The first 50% is due upon sigining the contract. The second 50% is due upon completion of the project.",
+      "The project is broken into two payments. The first 50% is due upon signing the contract. The second 50% is due upon completion of the project.",
     ],
     sectionId: "payment-schedule",
     accordionId: "payment-schedule-accordion",
@@ -101,6 +101,12 @@ export const faqs: FAQs[] = [
     content: ["No, I do not provide web design services only."],
     sectionId: "i-have-a-web-developer-already",
     accordionId: "i-have-a-web-developer-already-accordion",
+  },
+  {
+    title: "Do you work internationally?",
+    content: ["Yes, I work with clients from all over the world."],
+    sectionId: "do-you-work-internationally",
+    accordionId: "do-you-work-internationally-accordion",
   },
   {
     title: "What technologies do you use to build websites?",

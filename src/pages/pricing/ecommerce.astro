@@ -7,6 +7,11 @@ import {
   proFeatures,
   starterFeatures,
 } from "../../const/commercePlanFeatures";
+import CardHeading from "../../components/ui/pricing/CardHeading.astro";
+import FeatureCardWrapper from "../../components/ui/pricing/FeatureCardWrapper.astro";
+import FeatureTable from "../../components/ui/pricing/FeatureTable.astro";
+import { faqs } from "../../const/commercePricingFaqs";
+import Accordion from "../../components/ui/Accordion";
 ---
 
 <PageLayout
@@ -59,6 +64,142 @@ import {
         features={enterpriseFeatures}
         nameColour="text-theme-purple"
       />
+    </div>
+
+    <h2 class="mt-20 font-bold text-center text-5xl md:text-6xl xl:text-7xl">
+      Which plan will I need?
+    </h2>
+    <div class="grid grid-cols-1 justify-items-center">
+      <FeatureCardWrapper>
+        <CardHeading
+          name="Number of products"
+          nameSize="text-2xl md:text-3xl lg:text-4xl"
+          nameColour="text-gray-800"
+          description="All plans support unlimited products. But you may want Plus or Pro features to help your customers browse your products."
+          descriptionColour="text-gray-500"
+        />
+        <div class="border-t-2 border-gray-500 mb-10">
+          <FeatureTable
+            col2Heading="Product category"
+            col3Heading="Search, filtering, and sorting"
+            row1Col1="Starter"
+            row1Col2="Up to 5"
+            row1Col3="No"
+            row2Col1="Plus"
+            row2Col2="Up to 15"
+            row2Col3="Yes"
+            row3Col1="Pro"
+            row3Col2="Up to 30"
+            row3Col3="Yes"
+          />
+        </div>
+        <div
+          class="border-t-2 px-3 md:px-10 lg:px-20 border-gray-500 flex flex-col items-center"
+        >
+          <div class="mt-5">
+            <span class="text-xl text-gray-800 text-center"
+              >When will I need Plus or Pro?</span
+            >
+          </div>
+          <div class="mt-2 text-center">
+            <span class="text-gray-500"
+              >All plans support unlimited products. But when you have many
+              products, your customers will need a search and organisation
+              system to help them browse.</span
+            >
+          </div>
+          <div class="mt-2 text-center">
+            <span class="text-gray-500"
+              >Imagine you are selling clothes. You have a product category
+              “Unisex t-shirts”. If you are selling 10 models of t-shirts,
+              customers can simply scroll down to browse. But if you have more,
+              say 50, customers would then need to be able to filter these
+              t-shirts by style, colour, etc. This is when you will need
+              features from Plus or Pro.
+            </span>
+          </div>
+        </div>
+      </FeatureCardWrapper>
+
+      <FeatureCardWrapper>
+        <CardHeading
+          name="Design"
+          nameSize="text-2xl md:text-3xl lg:text-4xl"
+          nameColour="text-gray-800"
+        />
+        <div class="border-t-2 border-gray-500 mb-10">
+          <FeatureTable
+            isOneRowOneCell={true}
+            col2Heading="Design style"
+            row1Col1="Starter"
+            row1Col2="Clean and modern designs that focus on simplicity and usability"
+            row2Col1="Plus"
+            row2Col2="Engaging designs reflecting your brand with thought-out animations"
+            row3Col1="Pro"
+            row3Col2="Engaging designs as Plus, scaled to more pages and content"
+          />
+          <FeatureTable
+            isOneRowOneCell={true}
+            col2Heading="Design meetings"
+            row1Col1="Starter"
+            row1Col2="One 1 hour meeting to agree on design directions."
+            row2Col1="Plus"
+            row2Col2="One meeting per week to identify brand identity and share design mock ups."
+            row3Col1="Pro"
+            row3Col2="One meeting per week as Plus. But this results in more total meetings as project will run longer. "
+          />
+          <FeatureTable
+            isOneRowOneCell={true}
+            col2Heading="Web animation"
+            row1Col1="Starter"
+            row1Col2="Used for visual feedback, e.g. when a user clicks or hovers on a button."
+            row2Col1="Plus"
+            row2Col2="Used for storytelling, e.g. scroll animation, animated icons, illustration animations."
+            row3Col1="Pro"
+            row3Col2="Also used for storytelling, scaled to more content and pages."
+          />
+        </div>
+        <div
+          class="border-t-2 px-3 md:px-10 lg:px-20 border-gray-500 flex flex-col items-center"
+        >
+          <div class="mt-5 text-gray-500 text-center">
+            <span
+              >The Starter plan focuses on delivering a modern website within a
+              short turnaround time.
+            </span>
+          </div>
+          <div class="mt-5 text-base text-gray-500 text-center">
+            <span
+              >The Plus and Pro plan focus on crafting a unique and engaging
+              website that truly represents your brand. The design process
+              therefore includes weekly meetings to identify brand identity and
+              share design mock ups.
+            </span>
+          </div>
+        </div>
+      </FeatureCardWrapper>
+
+      <section>
+        <h2
+          class="mt-20 font-bold text-center text-5xl md:text-6xl xl:text-7xl text-gray-800"
+        >
+          FAQs
+        </h2>
+        <div class="mt-4 flex flex-col items-center mb-20">
+          {
+            faqs.map((faq) => (
+              <Accordion
+                title={faq.title}
+                sectionId={faq.sectionId}
+                accordionId={faq.accordionId}
+                content={faq.content}
+                isContentBullets={faq.isContentBullets}
+                client:visible
+              />
+            ))
+          }
+        </div>
+      </section>
     </div>
   </main>
 </PageLayout>

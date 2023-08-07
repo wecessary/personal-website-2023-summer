@@ -38,16 +38,12 @@ const cellTextColour = "text-gray-500";
 
 <div class="mt-5 mx-3 md:mx-8 lg:mx-10 grid grid-rows-4 gap-y-2">
   <div class={rowStyle}>
-    <div
-      class={`${
-        isTwoCols ? "col-span-2" : "col-start-2"
-      } text-center lg:text-left`}
-    >
+    <div class={`${isTwoCols ? "col-span-2" : "col-start-2"} text-center`}>
       <span class="text-lg text-gray-800">{col2Heading}</span>
     </div>
     {
       isThreeCols && (
-        <div class="col-start-3 text-center lg:text-left">
+        <div class="col-start-3 text-center">
           <span class="text-lg text-gray-800">{col3Heading}</span>
         </div>
       )
