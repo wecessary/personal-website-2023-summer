@@ -5,7 +5,7 @@ interface FAQs {
   accordionId: string;
   isContentBullets?: boolean;
 }
-export const faqs: FAQs[] = [
+export const commerceFAQs: FAQs[] = [
   {
     title: "What ecommerce platform do you use?",
     content: [

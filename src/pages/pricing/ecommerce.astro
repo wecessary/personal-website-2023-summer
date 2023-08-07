@@ -10,7 +10,7 @@ import {
 import CardHeading from "../../components/ui/pricing/CardHeading.astro";
 import FeatureCardWrapper from "../../components/ui/pricing/FeatureCardWrapper.astro";
 import FeatureTable from "../../components/ui/pricing/FeatureTable.astro";
-import { faqs } from "../../const/commercePricingFaqs";
+import { commerceFAQs } from "../../const/commercePricingFaqs";
 import Accordion from "../../components/ui/Accordion";
 ---
 
@@ -187,7 +187,7 @@ import Accordion from "../../components/ui/Accordion";
         </h2>
         <div class="mt-4 flex flex-col items-center mb-20">
           {
-            faqs.map((faq) => (
+            commerceFAQs.map((faq) => (
               <Accordion
                 title={faq.title}
                 sectionId={faq.sectionId}
