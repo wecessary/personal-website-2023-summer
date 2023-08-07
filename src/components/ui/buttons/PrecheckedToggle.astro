@@ -8,7 +8,7 @@ const { checked, href } = Astro.props;
 
 <style>
   .animate-slide {
-    animation: slide-right 0.5s ease-in-out;
+    animation: slide-right 1s ease-in-out;
     animation-fill-mode: forwards;
   }
   @keyframes slide-right {
@@ -17,19 +17,6 @@ const { checked, href } = Astro.props;
     }
     100% {
       transform: translateX(100%);
-    }
-  }
-
-  .animate-small-slide {
-    animation: small-slide-right 0.5s ease-in-out;
-    animation-fill-mode: forwards;
-  }
-  @keyframes small-slide-right {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(20%);
     }
   }
 
