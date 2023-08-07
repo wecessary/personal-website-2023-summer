@@ -1,5 +1,10 @@
 export const starterFeatures = [
   {
+    text: "Design and code",
+    tooltip:
+      "All websites are designed and coded by me. No templates are used.",
+  },
+  {
     text: "Simple and modern designs",
     tooltip: "Clean and modern designs that focus on simplicity and usability.",
   },

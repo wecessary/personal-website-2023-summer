@@ -1,5 +1,10 @@
 export const starterFeatures = [
   {
+    text: "Design and code",
+    tooltip:
+      "All websites are designed and coded by me. No templates are used.",
+  },
+  {
     text: "Everything you need to start selling",
     tooltip:
       "Online checkout, basket, payment gateway integration, discount code and more.",
