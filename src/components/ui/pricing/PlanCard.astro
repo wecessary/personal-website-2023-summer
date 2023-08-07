@@ -6,7 +6,6 @@ import CheckMarkListItem from "./CheckMarkListItem.astro";
 interface PlanFeature {
   text: string;
   tooltip?: string;
-  ariaDescribedBy?: string;
 }
 
 interface Props {
@@ -26,6 +25,15 @@ const {
   price,
   isOneOff = true,
 } = Astro.props;
+
+function textToAriaDescribedBy(planName: string, text: string) {
+  return (
+    planName.toLowerCase() +
+    "-" +
+    text.toLowerCase().replace(/ /g, "-") +
+    "-tooltip"
+  );
+}
 ---
 
 <div class="flex flex-col rounded-lg border-2 border-gray-500">
@@ -49,7 +57,7 @@ const {
           <CheckMarkListItem
             text={item.text}
             tooltip={item.tooltip}
-            ariaDescribedBy={item.ariaDescribedBy}
+            ariaDescribedBy={textToAriaDescribedBy(name, item.text)}
           />
         ))
       }

@@ -1,57 +1,12 @@
 ---
 import PageLayout from "../../layout/PageLayout.astro";
 import PlanCard from "../../components/ui/pricing/PlanCard.astro";
-
-const starterFeatures = [
-  {
-    text: "Simple and modern designs",
-    tooltip: "Clean and modern designs that focus on simplicity and usability.",
-  },
-  {
-    text: "Mobile friendly",
-    tooltip: "Your website will look great on all devices.",
-  },
-  { text: "Lifetime Gurantee" },
-  { text: "Hosting" },
-  {
-    text: "CMS",
-    tooltip:
-      "You will be able to change the content of your website without touching the code.",
-  },
-  { text: "Basic SEO" },
-  { text: "Enquiry form" },
-];
-
-const plusFeatures = [
-  {
-    text: "Everything in Starter",
-  },
-  {
-    text: "Visually engaging designs",
-    tooltip: "Polished designs that reflect your brand.",
-  },
-  { text: "Design mockups" },
-  { text: "Full SEO" },
-  { text: "1-2 custom functionalities" },
-];
-const proFeatures = [
-  { text: "Everything in Plus" },
-  {
-    text: "For websites with more pages",
-    tooltip:
-      "Pages that share the same design are always free. For more see below.",
-  },
-  {
-    text: "1-4 custom functionalities",
-    tooltip: "E.g. login portal, search engine, and AI chatbot.",
-  },
-];
-const enterpriseFeatures = [
-  { text: "Large scale company websites" },
-  { text: "Full stack web application" },
-  { text: "Mobile app development" },
-  { text: "Minimum viable product development" },
-];
+import {
+  enterpriseFeatures,
+  plusFeatures,
+  proFeatures,
+  starterFeatures,
+} from "../../const/commercePlanFeatures";
 ---
 
 <PageLayout
@@ -79,21 +34,21 @@ const enterpriseFeatures = [
       <PlanCard
         name="Starter"
         description="Just make me a website! "
-        price="£1,500"
+        price="£3,000"
         features={starterFeatures}
         nameColour="text-theme-red"
       />
       <PlanCard
         name="Plus"
         description="For individuals, small companies, and startups."
-        price="£4,500"
+        price="£8,500"
         features={plusFeatures}
         nameColour="text-theme-orange"
       />
       <PlanCard
         name="Pro"
         description="For mid-sized companies with more content and complex needs."
-        price="£9,000"
+        price="£12,750"
         features={proFeatures}
         nameColour="text-theme-blue"
       />
