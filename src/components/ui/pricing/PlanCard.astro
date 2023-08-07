@@ -6,7 +6,7 @@ import CheckMarkListItem from "./CheckMarkListItem.astro";
 interface PlanFeature {
   text: string;
   tooltip?: string;
-  ariaDescribedBy?:string
+  ariaDescribedBy?: string;
 }
 
 interface Props {
@@ -46,7 +46,11 @@ const {
     <ul class="mt-20 mx-5">
       {
         features.map((item) => (
-          <CheckMarkListItem text={item.text} tooltip={item.tooltip} ariaDescribedBy={item.ariaDescribedBy} />
+          <CheckMarkListItem
+            text={item.text}
+            tooltip={item.tooltip}
+            ariaDescribedBy={item.ariaDescribedBy}
+          />
         ))
       }
     </ul>

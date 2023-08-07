@@ -1,7 +1,9 @@
-
-
-
-<button aria-controls="mobile-nav-menu" aria-label="show mobile navigation menu" aria-expanded="true" class="mobile-menu-button inline-flex flex-col gap-1 lg:hidden">
+<button
+  aria-controls="mobile-nav-menu"
+  aria-label="show mobile navigation menu"
+  aria-expanded="true"
+  class="mobile-menu-button inline-flex flex-col gap-1 lg:hidden"
+>
   <div class="line-1 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
   </div>
   <div class="line-2 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
@@ -9,7 +11,6 @@
   <div class="line-3 h-[2px] w-7 bg-gray-600 rounded-xl transition-transform">
   </div>
 </button>
-
 
 <script>
   const menuContent = document.querySelector(".mobile-nav-menu");
@@ -21,7 +22,10 @@
   menuButton?.addEventListener("click", () => {
     if (!menuContent || !menuButton) return;
     menuContent.classList.toggle("hidden");
-    menuButton.setAttribute("aria-expanded", menuContent.classList.contains("hidden") ? "false" : "true"); 
+    menuButton.setAttribute(
+      "aria-expanded",
+      menuContent.classList.contains("hidden") ? "false" : "true"
+    );
 
     if (!menuContent?.classList.contains("hidden")) {
       menuContent?.classList.add("animate-fade-in");
@@ -47,5 +51,4 @@
       line3?.classList.remove("-rotate-45");
     }
   });
-
 </script>

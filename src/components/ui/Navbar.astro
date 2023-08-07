@@ -7,24 +7,26 @@ import HamburgerMenu from "./HamburgerMenu.astro";
 
 <style>
   .animate-fade-in {
-  animation: fade-in ease 0.7s;
-  animation-iteration-count: 1;
-}
-
-@keyframes fade-in {
-  0% {
-    transform: translateY(40px);
+    animation: fade-in ease 0.7s;
+    animation-iteration-count: 1;
   }
-  100% {
-    transform: translateY(0px);
-  }
-}
 
+  @keyframes fade-in {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 </style>
 
-
 <header class="px-5 lg:px-20 z-50 sticky top-0 backdrop-blur-sm pt-7 pb-5">
-  <nav role="navigation" aria-label="navigation menu" class="flex justify-between items-center">
+  <nav
+    role="navigation"
+    aria-label="navigation menu"
+    class="flex justify-between items-center"
+  >
     <div class="flex items-center gap-8">
       <a href="/">
         <Logo styles="w-12 h-auto lg:w-16" />
