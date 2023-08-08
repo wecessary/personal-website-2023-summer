@@ -68,8 +68,8 @@ export const commerceFAQs: FAQs[] = [
     title: "Do you provide the domain?",
     content: [
       "Short answer: No. You will need to purchase a domain name yourself.",
-      "A domain name is the address of your website. For example, my domain name is www.wesleyjessie.com.",
-      "Domain is something that you should own, not anyone else. I will provide support on where and how to purchase a domain name free of charge, but you will need to purchase it yourself.",
+      "A domain name is the address of your website. For example, my domain name is wesleyjessie.com.",
+      "This is something that you should own, not anyone else. I will provide support on where and how to purchase a domain name free of charge, but you will need to purchase it yourself.",
       "If you do not wish to buy one, a subdomain will be provided for you by the hosting platform for free. For example, your website may be called something like www.yourwebsite.vercel.app.",
     ],
     sectionId: "domain",
