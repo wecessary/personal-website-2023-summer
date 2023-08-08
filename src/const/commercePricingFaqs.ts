@@ -79,7 +79,7 @@ export const commerceFAQs: FAQs[] = [
     title:
       "I want to edit the content on my website, will I need to touch the code?",
     content: [
-      "No, CMS is included in all plans. This means there will be a dashboard like software where you can edit the content of your website without touching the code.",
+      "No, CMS is included in all packages. This means there will be a dashboard like software where you can edit the content of your website without touching the code.",
     ],
     sectionId: "CMS",
     accordionId: "CMS-accordion",
@@ -105,7 +105,7 @@ export const commerceFAQs: FAQs[] = [
   },
   {
     title:
-      "One of your plans sounds good to me. What if I want more categories or functionalities?",
+      "One of your packages sounds good to me. What if I want more categories or functionalities?",
     content: [
       "Talk to me!",
       "Sometimes it may be simple to add a category or funtionality. In that case, I will add it for free. If it is more complex, I will provide you with a quote for the add-on.",
