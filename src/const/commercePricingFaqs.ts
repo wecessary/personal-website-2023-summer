@@ -97,8 +97,8 @@ export const commerceFAQs: FAQs[] = [
   {
     title: "What do I need to get started?",
     content: [
-      "You will need to provide the content of your website. This includes branding, text, images, your logo, and other branding information.",
-      "If you do not have any images, I can help you source stock images",
+      "You will need to provide the content of your website. This includes text, images, your logo, and other branding information.",
+      "If you do not have any images, I can help you source stock images.",
     ],
     sectionId: "what-do-i-need-to-get-started",
     accordionId: "what-do-i-need-to-get-started-accordion",
@@ -110,7 +110,7 @@ export const commerceFAQs: FAQs[] = [
       "Talk to me!",
       "Sometimes it may be simple to add a category or funtionality. In that case, I will add it for free. If it is more complex, I will provide you with a quote for the add-on.",
 
-      "What's most important for me in a project is make the best possible website.",
+      "What's most important for me in a project is to make the best possible website.",
     ],
     sectionId: "what-if-i-want-more",
     accordionId: "what-if-i-want-more-accordion",
