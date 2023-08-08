@@ -1,0 +1,44 @@
+---
+import Arrow from "../components/icons/Arrow.astro";
+import PageLayout from "../layout/PageLayout.astro";
+---
+
+<PageLayout
+  title="Page not found"
+  description="Get custom made websites that stand out from templates. Life time gurantee."
+  bodyStyles="flex flex-col min-h-screen"
+>
+  <main class="mx-10 my-20 flex-1 flex flex-col justify-center items-center">
+    <h1
+      class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl lg:max-w-5xl xl:max-w-7xl 2xl:max-w-8xl py-2 text-center overflow-hidden"
+    >
+      <span>Coming soon.</span>
+    </h1>
+    <h2 class="text-gray-800 text-center lg:text-lg">
+      I'm still working on this page. Please check back later.
+    </h2>
+    <h3 class="mt-10 text-gray-800">Pages that are ready to view:</h3>
+    <ul class="text-gray-500 list-inside list-disc">
+      <li><a href="/" class="underline hover:no-underline">Home</a></li>
+      <li>
+        <a href="/pricing/websites" class="underline hover:no-underline"
+          >Pricing</a
+        >
+      </li>
+      <li>
+        <a href="/contact-me" class="underline hover:no-underline"
+          >Contact me
+        </a>
+      </li>
+    </ul>
+    <a
+      href="/"
+      class="mt-5 bg-gray-100 px-4 py-4 rounded-lg flex gap-1 items-center group"
+    >
+      <span class="text-gray-800">Head back to home page</span>
+      <span class="group-hover:translate-x-3 transition-transform"
+        ><Arrow styles="w-5 h-5 stroke-gray-800" /></span
+      ></a
+    >
+  </main>
+</PageLayout>
