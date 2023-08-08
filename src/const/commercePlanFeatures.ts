@@ -20,7 +20,7 @@ export const starterFeatures = [
   { text: "Lifetime Gurantee" },
   { text: "Hosting" },
   {
-    text: "CMS",
+    text: "CMS (Content Management System)",
     tooltip:
       "You will be able to change the content of your website without touching the code.",
   },
