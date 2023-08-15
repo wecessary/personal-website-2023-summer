@@ -1,5 +1,6 @@
 ---
 import HanddrawnCirle from "../components/icons/HanddrawnCirle.astro";
+import ContactForm from "../components/ui/ContactForm";
 import CopyEmail from "../components/ui/buttons/CopyEmail.astro";
 import PageLayout from "../layout/PageLayout.astro";
 ---
@@ -32,6 +33,7 @@ import PageLayout from "../layout/PageLayout.astro";
       class="mt-10 border-2 px-6 py-12 md:px-12 md:py-12 lg:mb-0 border-gray-300 rounded-lg text-gray-800"
     >
       <div class="flex flex-col lg:flex-row items-center gap-x-2">
+        <ContactForm client:visible />
         <p class="text-gray-800 text-lg">wesley@wesleyjessie.com</p>
         <CopyEmail />
       </div>
