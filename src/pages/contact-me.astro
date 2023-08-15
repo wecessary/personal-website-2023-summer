@@ -10,36 +10,46 @@ import PageLayout from "../layout/PageLayout.astro";
   title="Wesley Jessie - Freelance web design and development"
   description="Get custom made websites that stand out from templates. Life time gurantee."
 >
-  <main class="my-20 lg:my-0 flex-1 flex flex-col justify-center items-center">
-    <h1
-      class="text-center text-gray-800 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
-    >
-      Contact me to get started
-    </h1>
-    <h2
-      class="mt-2 text-gray-500 text-center text-lg lg:text-xl xl:text-2xl max-w-[260px] md:max-w-lg lg:max-w-2xl leading-5"
-    >
-      <span>Let's make the</span>
-      <div class="inline-block relative">
-        <span class=""> best possible</span><HanddrawnCirle
-          styles="absolute bottom-0 w-full h-full"
-        />
-      </div>
-      <span> website for you</span>
-      <span class="text-xs font-normal">(within your budget)</span>
-    </h2>
+  <main class="my-20 lg:my-0 flex-1">
+    <div class="flex justify-center">
+      <h1
+        class="text-center text-gray-800 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
+      >
+        Contact me
+      </h1>
+    </div>
 
-    <div
-      class="mt-10 border-2 px-6 py-12 md:px-12 md:py-12 lg:mb-0 border-gray-300 rounded-lg text-gray-800"
-    >
-      <div class="flex flex-col lg:flex-row items-center gap-x-2">
+    <div class="flex justify-center">
+      <h2
+        class="mt-2 text-gray-500 text-center text-lg lg:text-xl xl:text-2xl max-w-[260px] md:max-w-lg lg:max-w-2xl leading-5"
+      >
+        <span>Let's make the</span>
+        <div class="inline-block relative">
+          <span class=""> best possible</span><HanddrawnCirle
+            styles="absolute bottom-0 w-full h-full"
+          />
+        </div>
+        <span> website for you</span>
+        <span class="text-xs font-normal">(within your budget)</span>
+      </h2>
+    </div>
+
+    <div class="mt-20 flex justify-center">
+      <div
+        class="grid grid-cols-1 w-full lg:grid-cols-2 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl gap-x-10"
+      >
         <ContactForm client:visible />
-        <p class="text-gray-800 text-lg">wesley@wesleyjessie.com</p>
-        <CopyEmail />
+        <div>
+          <p class="font-bold text-gray-800">Don't like contact forms?</p>
+          <div class="mt-2 flex gap-2">
+            <p class="text-gray-500 text-lg">wesley@wesleyjessie.com</p>
+            <CopyEmail />
+          </div>
+          <p class="text-gray-500 text-lg text-center lg:text-left">
+            +44 7597 296544
+          </p>
+        </div>
       </div>
-      <p class="text-gray-800 text-lg text-center lg:text-left mt-5">
-        +44 7597 296544
-      </p>
     </div>
   </main>
 </PageLayout>
