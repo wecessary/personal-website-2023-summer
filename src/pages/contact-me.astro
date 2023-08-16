@@ -10,7 +10,7 @@ import PageLayout from "../layout/PageLayout.astro";
   title="Wesley Jessie - Freelance web design and development"
   description="Get custom made websites that stand out from templates. Life time gurantee."
 >
-  <main class="my-20 lg:my-0 flex-1">
+  <main class="my-20 flex-1">
     <div class="flex justify-center">
       <h1
         class="text-center text-gray-800 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
@@ -19,9 +19,9 @@ import PageLayout from "../layout/PageLayout.astro";
       </h1>
     </div>
 
-    <div class="flex justify-center">
+    <div class="mt-2 flex justify-center">
       <h2
-        class="mt-2 text-gray-500 text-center text-lg lg:text-xl xl:text-2xl max-w-[260px] md:max-w-lg lg:max-w-2xl leading-5"
+        class="text-gray-500 text-center text-lg lg:text-xl xl:text-2xl max-w-[260px] md:max-w-lg lg:max-w-2xl leading-5"
       >
         <span>Let's make the</span>
         <div class="inline-block relative">
@@ -34,18 +34,25 @@ import PageLayout from "../layout/PageLayout.astro";
       </h2>
     </div>
 
-    <div class="mt-20 flex justify-center">
+    <div class="mt-8 lg:mt-20 flex justify-center">
       <div
-        class="grid grid-cols-1 w-full lg:grid-cols-2 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl gap-x-10"
+        class="grid grid-cols-1 w-[85%] lg:grid-cols-2 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl gap-10"
       >
         <ContactForm client:visible />
+
         <div>
-          <p class="font-bold text-gray-800">Don't like contact forms?</p>
-          <div class="mt-2 flex gap-2">
-            <p class="text-gray-500 text-lg">wesley@wesleyjessie.com</p>
+          <p
+            class="mt-0 lg:mt-8 text-lg font-bold text-gray-800 text-center lg:text-left"
+          >
+            Don't like contact forms?
+          </p>
+          <div
+            class="mt-2 flex flex-col lg:flex-row items-center lg:items-start gap-2"
+          >
+            <p class="text-gray-500">wesley@wesleyjessie.com</p>
             <CopyEmail />
           </div>
-          <p class="text-gray-500 text-lg text-center lg:text-left">
+          <p class="mt-5 lg:mt-1 text-gray-500 text-center lg:text-left">
             +44 7597 296544
           </p>
         </div>
