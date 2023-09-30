@@ -14,16 +14,6 @@
   font-display: swap;
 }
 
-.rainbow {
-  background: linear-gradient(
-    90deg,
-    #fc1e1e 0%,
-    #ff9245 21.35%,
-    #5083ff 48.44%,
-    #ff660b 100%
-  );
-  animation: shine 8s linear infinite;
-}
 @keyframes shine {
   0% {
     background-position: 0% 50%;
