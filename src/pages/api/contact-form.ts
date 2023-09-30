@@ -7,7 +7,7 @@ interface POST {
 
 const MY_EMAIL = "wesley@wesleyjessie.com";
 
-export async function post({ request }: POST) {
+export async function POST({ request }: POST) {
   const API_KEY = import.meta.env.RESEND_API_KEY;
   const resend = new Resend(API_KEY);
   const data = await request.formData();
