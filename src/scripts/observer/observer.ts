@@ -1,4 +1,4 @@
-import typewriter from "./typewritterEffect";
+import typewriter from "../typewritterEffect";
 
 let strikeThroughTarget = document.querySelector(".animate-strike");
 let typewriterTarget = document.querySelector(".typewriter-target");
