@@ -2,42 +2,52 @@
 import Clipboard from "../../icons/Clipboard.astro";
 ---
 
-<button
-  class="w-36 clipboard flex gap-x-1 items-center px-1 py-1 border-gray-300 border-[1px] rounded-md"
-  ><span><Clipboard styles="w-4 h-4  stroke-gray-400 fill-gray-400" /></span>
-  <span class="text-sm text-gray-400">copy to clipboard</span>
-</button>
+<custom-clipboard>
+  <button
+    class="w-36 clipboard flex gap-x-1 items-center px-1 py-1 border-gray-300 border-[1px] rounded-md"
+    ><span><Clipboard styles="w-4 h-4  stroke-gray-400 fill-gray-400" /></span>
+    <span class="clipboard-message text-sm text-gray-400"
+      >copy to clipboard</span
+    >
+  </button>
+</custom-clipboard>
 
 <script>
-  const clipboardBtn = document.querySelectorAll(".clipboard");
-  const textToCopy = "wesley@wesleyjessie.com";
+  const TEXT_TO_COPY = "wesley@wesleyjessie.com";
 
-  clipboardBtn?.forEach((btn) => {
-    const spanTags = btn.querySelectorAll("span");
-    let timerId: number | undefined;
-    btn.addEventListener("click", () =>
-      updateClipboard(btn, spanTags[1], timerId)
-    );
-  });
+  class CustomClipboard extends HTMLElement {
+    constructor() {
+      super();
+      const btn = this.querySelector("button");
+      const message = this.querySelector("span.clipboard-message");
+      let timerId: number | undefined;
+
+      btn?.addEventListener("click", () => {
+        clearTimeout(timerId);
+        updateClipboard(btn, message).then((newTimerId) => {
+          timerId = newTimerId;
+        });
+      });
+    }
+  }
+
+  customElements.define("custom-clipboard", CustomClipboard);
 
   async function updateClipboard(
-    button: Element | undefined,
-    spanTag: Element | undefined,
-    timerId: number | undefined
+    button: Element | null,
+    message: Element | null
   ) {
-    clearTimeout(timerId);
-    if (button && spanTag) {
-      try {
-        await navigator.clipboard.writeText(textToCopy);
-        spanTag.textContent = "copied!";
-      } catch (err) {
-        spanTag.textContent = "Sorry your browser does not allow this.";
-      } finally {
-        timerId = setTimeout(() => {
-          console.log(2, timerId);
-          spanTag.textContent = "copy to clipboard";
-        }, 3000);
-      }
+    if (!button || !message) return;
+
+    try {
+      await navigator.clipboard.writeText(TEXT_TO_COPY);
+      message.textContent = "copied!";
+    } catch (err) {
+      message.textContent = "Sorry your browser does not allow this.";
+    } finally {
+      return setTimeout(() => {
+        message.textContent = "copy to clipboard";
+      }, 3000);
     }
   }
 </script>
