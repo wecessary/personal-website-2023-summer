@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navbar from "../components/ui/Navbar.astro";
 import Footer from "../components/ui/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -21,6 +22,7 @@ const { title, description, bodyStyles } = Astro.props;
     <meta property="og:description" content={title} />
     <meta property="og:image" content="/logo.jpg" />
     <title>{title}</title>
+    <ViewTransitions transition:animate="slide" />
   </head>
   <body class={`bg-white bg-graph-papper ${bodyStyles}`}>
     <Navbar />
