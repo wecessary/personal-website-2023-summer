@@ -1,6 +1,24 @@
 import handleObserver from "./handleObserver";
 
-const strikeThroughTrigger = document.querySelector(".strike-throught-trigger");
+const sectionNoTemplateTrigger = document.querySelector(
+  ".section-no-template-trigger"
+);
+const sectionTestimonialTrigger = document.querySelector(
+  ".section-testimonial-trigger"
+);
+const sectionGuranteeTrigger = document.querySelector(
+  ".section-gurantee-trigger"
+);
+const sectionCodeAndDesignTrigger = document.querySelector(
+  ".section-code-and-design-trigger"
+);
+
+const triggers = [
+  sectionNoTemplateTrigger,
+  sectionTestimonialTrigger,
+  sectionGuranteeTrigger,
+  sectionCodeAndDesignTrigger,
+];
 
 window.addEventListener("load", () => {
   createObserver();
@@ -9,21 +27,22 @@ window.addEventListener("load", () => {
 const options = {
   root: null,
   rootMargin: "0px",
-  threshold: createThreshold(),
+  threshold: 1,
 };
-
-function createThreshold() {
-  const STEPS = 20;
-  const threshold = [];
-  for (let i = 1; i <= STEPS; i++) {
-    threshold.push(i / STEPS);
-  }
-  console.log(threshold);
-  return threshold;
-}
 
 function createObserver() {
   const observer = new IntersectionObserver(handleObserver, options);
-
-  if (strikeThroughTrigger) observer.observe(strikeThroughTrigger);
+  triggers.forEach((trigger) => {
+    if (trigger) observer.observe(trigger);
+  });
 }
+
+// function createThreshold() {
+//   const STEPS = 20;
+//   const threshold = [];
+//   for (let i = 1; i <= STEPS; i++) {
+//     threshold.push(i / STEPS);
+//   }
+//   console.log(threshold);
+//   return threshold;
+// }

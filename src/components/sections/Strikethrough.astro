@@ -1,8 +1,25 @@
-<div class="inline-block relative">
+<style>
+  .animate-strike {
+    animation: strike 2.5s ease-in-out;
+  }
+
+  @keyframes strike {
+    0% {
+      transform: translateX(-50%) scaleX(0);
+    }
+    100% {
+      transform: translateX(0%) scaleX(1);
+    }
+  }
+
+  .animate-paused {
+    animation-play-state: paused;
+  }
+</style>
+
+<div aria-hidden="true" class="inline-block relative">
   <span>template</span>
   <span
-    aria-hidden="true"
-    style="transform: translateX(-100%) scaleX(0)"
-    class="animate-strike transition-all w-full h-2 left-0 top-1/2 absolute bg-theme-red"
+    class="animate-strike animate-paused w-full h-2 left-0 top-1/2 absolute bg-theme-red"
   ></span>
 </div>
