@@ -30,7 +30,7 @@ export default function ContactForm() {
 
   const labelWrapperStyles = `block mt-3`;
   const labelStyles = `text-gray-500`;
-  const inputStyles = `rounded-lg outline outline-2 outline-gray-200 focus:outline-gray-400 w-full mt-2 py-1`;
+  const inputStyles = `px-3 rounded-lg outline outline-2 outline-gray-200 focus:outline-gray-400 w-full mt-2 py-1`;
   const submitBtnContent = formStatus === "loading" ? "Sending..." : "Submit";
 
   return (
